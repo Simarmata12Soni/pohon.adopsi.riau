@@ -49,6 +49,8 @@
         <script src="data/HutanAdatPetapahan_7.js"></script>
         <script src="data/PohonMuda_8.js"></script>
         <script src="data/PohonDewasa_9.js"></script>
+        <script src="data/BatasKawasanTahuraSultanSyarifQasim_10.js"></script>
+        <script src="data/PohonAdopsiMinastahura_11.js"></script>
         <script>
         var map = L.map('map', {
             zoomControl:true, maxZoom:28, minZoom:1
@@ -522,6 +524,79 @@
         });
         bounds_group.addLayer(layer_HutanAdatPetapahan_7);
         map.addLayer(layer_HutanAdatPetapahan_7);
+
+        function pop_BatasKawasanTahuraSultanSyarifQasim_10(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <th scope="row">Provinsi</th>\
+                        <td>' + (feature.properties['provinsi'] !== null ? autolinker.link(feature.properties['provinsi'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Kabupaten</th>\
+                        <td>' + (feature.properties['kabupat'] !== null ? autolinker.link(feature.properties['kabupat'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Jenis KPH</th>\
+                        <td>' + (feature.properties['jenis_kph'] !== null ? autolinker.link(feature.properties['jenis_kph'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Unit KPH</th>\
+                        <td>' + (feature.properties['unit_kph'] !== null ? autolinker.link(feature.properties['unit_kph'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Nama KPH</th>\
+                        <td>' + (feature.properties['nama_kph'] !== null ? autolinker.link(feature.properties['nama_kph'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Fungsi Kawasan</th>\
+                        <td>' + (feature.properties['fungsi_kws'] !== null ? autolinker.link(feature.properties['fungsi_kws'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Luas (ha)</th>\
+                        <td>' + (feature.properties['luas_ha'] !== null ? autolinker.link(feature.properties['luas_ha'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Nomor SK</th>\
+                        <td>' + (feature.properties['sk_mdl'] !== null ? autolinker.link(feature.properties['sk_mdl'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Tanggal SK Penetapan</th>\
+                        <td>' + (feature.properties['tgl_sk_mdl'] !== null ? autolinker.link(feature.properties['tgl_sk_mdl'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_BatasKawasanTahuraSultanSyarifQasim_10_0() {
+            return {
+                pane: 'pane_BatasKawasanTahuraSultanSyarifQasim_10',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(135,116,158,0.2980392156862745)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_BatasKawasanTahuraSultanSyarifQasim_10');
+        map.getPane('pane_BatasKawasanTahuraSultanSyarifQasim_10').style.zIndex = 403;
+        map.getPane('pane_BatasKawasanTahuraSultanSyarifQasim_10').style['mix-blend-mode'] = 'normal';
+        var layer_BatasKawasanTahuraSultanSyarifQasim_10 = new L.geoJson(json_BatasKawasanTahuraSultanSyarifQasim_10, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_BatasKawasanTahuraSultanSyarifQasim_10',
+            layerName: 'layer_BatasKawasanTahuraSultanSyarifQasim_10',
+            pane: 'pane_BatasKawasanTahuraSultanSyarifQasim_10',
+            onEachFeature: pop_BatasKawasanTahuraSultanSyarifQasim_10,
+            style: style_BatasKawasanTahuraSultanSyarifQasim_10_0,
+        });
+        bounds_group.addLayer(layer_BatasKawasanTahuraSultanSyarifQasim_10);
+        map.addLayer(layer_BatasKawasanTahuraSultanSyarifQasim_10);
+
         function pop_PohonMuda_8(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
